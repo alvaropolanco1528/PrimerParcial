@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Primer_parcial
+namespace Primer_parcial.UI.Consultas
 {
-    public partial class Form1 : Form
+    public partial class ConsulataParcia : Form
     {
-        public Form1()
+        public ConsulataParcia()
         {
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
