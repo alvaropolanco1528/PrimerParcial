@@ -7,11 +7,12 @@ using Primer_parcial.Entidades;
 using System.Data.Entity;
 
 
+
 namespace Primer_parcial.DAL.Scripts
 {
     public class Contexto : DbContext
     {
-        public Dset:<> {Get; Set;}
+        public DbSet <Grupos> grupos { get; set; }
         public Contexto() : base("ConsStr")
         {}
     }

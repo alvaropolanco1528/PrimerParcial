@@ -52,7 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\GruposBll.cs" />
     <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="Entidades\Grupos.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +68,12 @@
     </Compile>
     <Compile Include="UI\Consultas\ConsulataParcia.Designer.cs">
       <DependentUpon>ConsulataParcia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\Registrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\Registrar.Designer.cs">
+      <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\RegistroParcial.cs">
       <SubType>Form</SubType>
@@ -89,6 +97,9 @@
     <EmbeddedResource Include="UI\Consultas\ConsulataParcia.resx">
       <DependentUpon>ConsulataParcia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\Registrar.resx">
+      <DependentUpon>Registrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroParcial.resx">
       <DependentUpon>RegistroParcial.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,8 +118,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BLL\" />
-    <Folder Include="Entidades\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
