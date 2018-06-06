@@ -69,12 +69,6 @@
     <Compile Include="UI\Consultas\ConsulataParcia.Designer.cs">
       <DependentUpon>ConsulataParcia.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\Registrar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Registros\Registrar.Designer.cs">
-      <DependentUpon>Registrar.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Registros\RegistroParcial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,9 +90,6 @@
     </Compile>
     <EmbeddedResource Include="UI\Consultas\ConsulataParcia.resx">
       <DependentUpon>ConsulataParcia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\Registrar.resx">
-      <DependentUpon>Registrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroParcial.resx">
       <DependentUpon>RegistroParcial.cs</DependentUpon>

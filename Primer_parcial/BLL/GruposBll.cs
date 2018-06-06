@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 using Primer_parcial.DAL.Scripts;
 using Primer_parcial.Entidades;
 using System.Data.Entity;
-using System.ComponentModel.DataAnnotations;
 using System.Linq.Expressions;
+using System.Data;
 
 namespace Primer_parcial.BLL
 {
     public class GruposBll
     {
 
-        public static bool Guardar (Grupos grupos)
+        public static bool Guardar(Grupos grupos)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -26,6 +26,7 @@ namespace Primer_parcial.BLL
                     contexto.SaveChanges();
                     paso = true;
                 }
+                contexto.Dispose();
             }
 
             catch (Exception)
@@ -36,7 +37,7 @@ namespace Primer_parcial.BLL
         }
 
 
-        public static bool Editar(Grupos grupos)
+        public static bool Modificar(Grupos grupos)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -58,7 +59,7 @@ namespace Primer_parcial.BLL
         }
 
 
-        public static bool Eliminar (int id)
+        public static bool Eliminar(int id)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -85,7 +86,7 @@ namespace Primer_parcial.BLL
         }
 
 
-         public static  Modificar (int id)
+        public static Grupos Buscar(int id)
         {
             Contexto contexto = new Contexto();
             Grupos grupos = new Grupos();
@@ -93,11 +94,33 @@ namespace Primer_parcial.BLL
             {
                 grupos = contexto.grupos.Find(id);
                 contexto.Dispose();
-            }catch(Exception)
+            }
+            catch (Exception)
             {
                 throw;
             }
             return grupos;
         }
+
+
+
+        public static List<Grupos> GetList(Expression<Func<Grupos, bool>> expression)
+        {
+            List<Grupos> grupos = new List<Grupos>();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                grupos = contexto.grupos.Where(expression).ToList();
+                contexto.Dispose();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return grupos;
+        }
+
+
     }
 }

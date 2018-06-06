@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Primer_parcial.BLL;
 using Primer_parcial.Entidades;
 using Primer_parcial.DAL.Scripts;
+using Primer_parcial.UI.Registros;
+using Primer_parcial.DAL;
 
   
 
@@ -17,6 +19,16 @@ namespace Primer_parcial.UI.Registros
 {
     public partial class RegistroParcial : Form
     {
+
+        public void Limpiar()
+        {
+            tdescripcion.Clear();
+
+            
+        }
+
+
+
         public RegistroParcial()
         {
             InitializeComponent();
@@ -24,18 +36,7 @@ namespace Primer_parcial.UI.Registros
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Grupos grupo = LlenarClase();
-            bool paso = false;
-            if (InumericDown.value == 0)
-                paso = BLL.GruposBll.Guardar(grupo);
-            else
-                paso = BLL.GruposBll.Modificar(LlenarClase());
-
-            if (paso)
-
-                MessageBox.Show("Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show("No se pudo guardar", MessageBoxDefaultButton.OK, MessageBoxIcon, ErrorBlinkStyle);
+            
 
         }
 
@@ -45,6 +46,68 @@ namespace Primer_parcial.UI.Registros
         }
 
         private void Nuevo_Click(object sender, EventArgs e)
+        {
+
+            Limpiar();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(IDnumero.Value);
+            Grupos grupos = BLL.GruposBll.Buscar(id);
+
+            if (grupos != null)
+            {
+
+            }
+            else
+                MessageBox.Show("El grupo no fue encontrado", "Fallo",
+            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
+
+            int id = Convert.ToInt32(IDnumero.Value);
+            if (BLL.GruposBll.Eliminar(id))
+                MessageBox.Show("Eliminado", "Exito ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("No se Pudo eliminar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cantidad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Descripcion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Grupo_Click(object sender, EventArgs e)
         {
 
         }

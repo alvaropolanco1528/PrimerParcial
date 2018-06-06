@@ -32,7 +32,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BuscarConsulta = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Imprimir = new System.Windows.Forms.Button();
@@ -46,11 +46,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 40);
+            this.label1.Location = new System.Drawing.Point(34, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Filtro";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
@@ -77,14 +78,15 @@
             this.textBox1.Size = new System.Drawing.Size(245, 20);
             this.textBox1.TabIndex = 3;
             // 
-            // button1
+            // BuscarConsulta
             // 
-            this.button1.Location = new System.Drawing.Point(660, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 55);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Consultar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BuscarConsulta.Image = global::Primer_parcial.Properties.Resources.find;
+            this.BuscarConsulta.Location = new System.Drawing.Point(688, 12);
+            this.BuscarConsulta.Name = "BuscarConsulta";
+            this.BuscarConsulta.Size = new System.Drawing.Size(100, 55);
+            this.BuscarConsulta.TabIndex = 4;
+            this.BuscarConsulta.UseVisualStyleBackColor = true;
+            this.BuscarConsulta.Click += new System.EventHandler(this.BuscarConsulta_Click);
             // 
             // label3
             // 
@@ -125,15 +127,15 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(210, 66);
+            this.dateTimePicker1.Location = new System.Drawing.Point(200, 66);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(159, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(202, 20);
             this.dateTimePicker1.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(386, 72);
+            this.label5.Location = new System.Drawing.Point(408, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 10;
@@ -141,9 +143,9 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(427, 65);
+            this.dateTimePicker2.Location = new System.Drawing.Point(458, 65);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(177, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(198, 20);
             this.dateTimePicker2.TabIndex = 11;
             // 
             // ConsulataParcia
@@ -158,7 +160,7 @@
             this.Controls.Add(this.Imprimir);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BuscarConsulta);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
@@ -177,7 +179,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BuscarConsulta;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Imprimir;
